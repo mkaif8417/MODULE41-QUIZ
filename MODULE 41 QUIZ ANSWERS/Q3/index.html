@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Conversion</title>
+</head>
+<body>
+    <h1>Price Conversion</h1>
+    <p>Prices have been converted from USD to INR:</p>
+    <ul id="priceList"></ul>
+
+    <script>
+        // List of items with prices in USD
+        const items = [
+            { name: "Laptop", priceUSD: 1000 },
+            { name: "Phone", priceUSD: 800 },
+            { name: "Headphones", priceUSD: 150 },
+            { name: "Monitor", priceUSD: 300 }
+        ];
+
+        // Exchange rate: 1 USD = 80 INR
+        const exchangeRate = 80;
+
+        // Convert prices to INR using map
+        const itemsInINR = items.map(item => ({
+            name: item.name,
+            priceINR: (item.priceUSD * exchangeRate).toFixed(2) // Convert and round to 2 decimals
+        }));
+
+        // Display the converted prices on the page
+        const priceList = document.getElementById("priceList");
+        itemsInINR.forEach(item => {
+            const listItem = document.createElement("li");
+            listItem.innerText = `${item.name}: ₹${item.priceINR}`;
+            priceList.appendChild(listItem);
+        });
+
+        console.log("Converted Prices:", itemsInINR);
+    </script>
+</body>
+</html>

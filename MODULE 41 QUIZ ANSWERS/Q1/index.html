@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse String with Delay</title>
+</head>
+<body>
+    <h1>Reverse String Program</h1>
+    <p>lets see answer on consolee</p>
+
+    <script>
+     
+        const input = "PW SKILLS";
+        
+    
+        function reverseString(str) {
+            return str.split("").reverse().join("");
+        }
+
+        
+        setTimeout(() => {
+            const reversed = reverseString(input);
+            console.log("Original String:", input);
+            console.log("Reversed String:", reversed);
+        }, 2000);
+    </script>
+</body>
+</html>
